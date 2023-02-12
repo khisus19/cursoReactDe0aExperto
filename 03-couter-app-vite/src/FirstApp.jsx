@@ -1,9 +1,25 @@
+import PropTypes from "prop-types";
 
-export const FirstApp = () => {
-  const funcionPrueba = ( a, b = 2) => {
-    return a + b
-  } 
+export const FirstApp = ({ title, subtitle }) => {
+
+  // console.log();
 
 
-  return <h1>{ funcionPrueba( 5, 5) }</h1>
+  return (
+    <>
+      <h1>{ title }</h1>
+      <p>{ subtitle }</p>
+    </>
+  )
+}
+
+FirstApp.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+}
+
+FirstApp.defaultProps = {
+  name: "Jesús Álvarez",
+  subtitle: "No hay subtitulo",
+  title: "No hay titulo",
 }
