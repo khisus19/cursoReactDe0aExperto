@@ -1,4 +1,4 @@
-
+import { getUser, getUsuarioActivo } from "../../src/base-pruebas/05-funciones.js";
 
 describe('Pruebas en 05-funciones', () => { 
   
@@ -9,6 +9,13 @@ describe('Pruebas en 05-funciones', () => {
       username: 'El_Papi1502'
     };
 
+    expect( testUser ).toStrictEqual( getUser() )
   });
 
+
+  test('getUsuarioActivo debe retornar un objeto', () => { 
+    const name = "fernando"
+
+    expect( name ).toBe( getUsuarioActivo(name).username)
+  })
 });
