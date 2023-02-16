@@ -16,16 +16,24 @@ describe('Pruebas a 08-imp-exp', () => {
 
   test('Deberia retornar un arreglo', () => { 
     
-    const universo = "DC";
-    const heroesArr = getHeroesByOwner( universo );
+    const dcHeroesArr = getHeroesByOwner( "DC" );
+    const marvelHeroesArr = getHeroesByOwner( "Marvel" );
+
     const dcs = [
       { id: 1, name: 'Batman', owner: 'DC' },
       { id: 3, name: 'Superman', owner: 'DC' },
       { id: 4, name: 'Flash', owner: 'DC' }
     ]
 
+    const marvels = [
+      {"id": 2, "name": "Spiderman", "owner": "Marvel"}, 
+      {"id": 5, "name": "Wolverine", "owner": "Marvel"}
+    ]
 
-    expect( 3 ).toBe( heroesArr.length );
-    expect( dcs ).toStrictEqual( heroesArr );
+
+    expect( 3 ).toBe( dcHeroesArr.length );
+    expect( dcs ).toStrictEqual( dcHeroesArr );
+    expect( 2 ).toBe( marvelHeroesArr.length );
+    expect( marvels ).toStrictEqual( marvelHeroesArr );
   })
 })
