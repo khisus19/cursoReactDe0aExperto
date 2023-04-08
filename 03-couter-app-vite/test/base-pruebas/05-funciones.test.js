@@ -13,9 +13,12 @@ describe('Pruebas en 05-funciones', () => {
   });
 
 
-  test('getUsuarioActivo debe retornar un objeto', () => { 
-    const name = "fernando"
+  test('getUsuarioActivo debe retornar un nombre', () => { 
+    const user = {
+      username: "fernando",
+      uid: 'ABC567' 
+    }
 
-    expect( name ).toBe( getUsuarioActivo(name).username)
+    expect( user ).toStrictEqual( getUsuarioActivo( "fernando" ));
   })
 });

@@ -5,12 +5,12 @@ import { array } from "prop-types";
 
 describe('Pruebas a 08-imp-exp', () => { 
 
-  test('Debería retornar', () => { 
+  test('Debería retornar el nombre del héroe por su Id', () => { 
     
     const heroId = 1;
-    const heroe = getHeroeById(heroId).name;
+    const { name } = getHeroeById(heroId);
 
-    expect( "Batman" ).toBe(heroe)
+    expect( "Batman" ).toBe(name)
   });
 
 

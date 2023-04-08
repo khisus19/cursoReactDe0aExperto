@@ -8,6 +8,7 @@ describe('Pruebas de 06-Desestructuración de objetos', () => {
     const edad = 45; 
 
     expect( edad ).toBe( usContext(clave, edad).anios)
+    expect( clave ).toBe( usContext(clave, edad).nombreClave)
   })
 
 })
