@@ -1,32 +1,25 @@
-import { useState } from 'react';
 import PropTypes from "prop-types";
 
+import React from 'react'
 
-export const FirstApp = ({ value }) => {
-  
-  const [ counter, setCounter ] = useState(value);
-
-  const handleAdd = () => setCounter( counter + 1);
-  const handleSub = () => setCounter( counter - 1);
-  const handleReset = () => setCounter( value );
-
+export const FirstApp = ({ title, subTitle, name }) => {
   return (
     <>
-      <h1>Counter App</h1>
-      <p>{ counter }</p>
-      <button onClick={ handleAdd } >+1</button>
-      <button onClick={ handleSub } >-1</button>
-      <button onClick={ handleReset } >Reset</button>
+      <h1 data-testid="test-title">{ title }</h1>
+      <p>{ subTitle }</p>
+      <p>{ subTitle }</p>
+      <p>{ name }</p>
     </>
   )
 }
 
 FirstApp.propTypes = {
-  value: PropTypes.number,
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
 }
 
 FirstApp.defaultProps = {
   name: "Jesús Álvarez",
-  subtitle: "No hay subtitulo",
-  title: "No hay titulo",
+  subTitle: "No hay subtitulo",
+  // title: "No hay titulo",
 }
