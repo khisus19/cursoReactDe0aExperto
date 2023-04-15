@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { CounterApp } from "../src/CounterApp";
 
 
@@ -13,9 +13,16 @@ describe('Prueba de CounterApp', () => {
   
   test('Debe tener el valor de 100', () => { 
    
-    const { container } = render( <CounterApp value={ 100 } /> );
-    console.log(container);
-    // expect( container.contains(100) ).toBeTruthy();
+    render( <CounterApp value={ 100 } /> );
+    expect( screen.getByText(100) ).toBeTruthy();
+
+  })
+
+  test('Debe tener el valor de 100 dentro de una etiqueta <p>', () => { 
+   
+    render( <CounterApp value={ 100 } /> );
+    // console.log(screen);
+    expect( screen.getByRole("heading", {level: 3}).innerHTML ).toContain("100");
 
   })
 
