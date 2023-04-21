@@ -8,6 +8,8 @@ import { NavBar } from "./components/NavBar";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <NavBar />
-    <GifExpertApp />
+    <main>
+      <GifExpertApp />
+    </main>
   </React.StrictMode>,
 );
