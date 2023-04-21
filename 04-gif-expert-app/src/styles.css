@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
+  color: var(--clr-light);
 }
 :root {
   --clr-main: #00d9f6;
@@ -60,7 +61,7 @@ input {
   background-color: white;
   border-radius: 5px;
   border: 1px solid rgb(97, 32, 158);
-  color: black;
+  color: var(--clr-light);
   font-size: 1.2rem;
   outline: none;
   padding: 10px 15px;
