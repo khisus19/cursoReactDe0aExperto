@@ -44,6 +44,7 @@ describe('Pruebas en AddCategory', () => {
     const form = screen.getByRole('form');
     fireEvent.submit( form ); 
 
+    expect( onNewCategory ).toHaveBeenCalledTimes(0);
     expect( onNewCategory ).not.toHaveBeenCalled();
 
   })
