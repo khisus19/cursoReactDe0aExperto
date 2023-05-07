@@ -6,10 +6,9 @@ export const GifExpertApp = () => {
   const [categories, setCategories] = useState([ "Real Madrid" ]);
 
   const onAddCategory = (newCategory) => {
-    
     if( categories.includes(newCategory) ) return;
     
-    setCategories([ newCategory, ...categories])
+    setCategories([ newCategory, ...categories]);
   }
 
   return (
@@ -20,14 +19,14 @@ export const GifExpertApp = () => {
         onNewCategory={ onAddCategory }
       />
 
-      { 
+      {
         categories.map(category => (
           <GifGrid 
             key={ category } 
-            category={category} />
+            category={category} 
+          />
         ))
       }
-
     </>
   )
 }
