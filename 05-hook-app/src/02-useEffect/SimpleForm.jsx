@@ -1,62 +1,68 @@
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import { Message } from "./Message";
+
+
 
 export const SimpleForm = () => {
 
-  const [formState, setFormState] = useState({
-    username: "goku",
-    email: "goku@mail.com"
-  })
+  const [formState, setformState] = useState({
+    username: "jesus",
+    email: "jesus@mail.com"
+  });
 
   const { username, email } = formState;
 
-  const onInputChange = ({target}) => {
+  const onInputChange = ({ target }) => {
     const { name, value } = target;
-    setFormState({
+    setformState({
       ...formState,
       [ name ]: value
     })
-  }
+  };
 
-  useEffect( () => {
-    // console.log("useEffect called!");
+  useEffect(() => {
+    // console.log("useEffect called!")
   }, []);
 
-  useEffect( () => {
-    // console.log("formState changed!");
+  useEffect(() => {
+    // console.log("useEffect formstate called!")
   }, [formState]);
+  
 
-  useEffect( () => {
-    // console.log("email changed!");
+  useEffect(() => {
+    // console.log("useEffect email called!")
   }, [email]);
+  
 
   return (
     <>
       <h1>Formulario Simple</h1>
       <hr />
 
-      <input
-        type="text"
+      <input 
+        type="text" 
         className="form-control"
         placeholder="Username"
         name="username"
-        value={username}
-        onChange={onInputChange}
-      />
+        value={ username }
+        onChange={ onInputChange }
+        />
 
-      <input
-        type="email"
+      <input 
+        type="email" 
         className="form-control mt-2"
-        placeholder="username@mail.com"
+        placeholder="usuario@email.com"
         name="email"
-        value={email}
-        onChange={onInputChange}
+        value={ email }
+        onChange={ onInputChange }
       />
 
       {
-        (username === "goku2") && <Message />
+        username === "strider2" && 
+        <Message 
+          className="mt-2"
+        />
       }
-
     </>
   )
 }
