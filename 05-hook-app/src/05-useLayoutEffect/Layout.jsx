@@ -1,22 +1,25 @@
 import { useCounter, useFetch } from "../hooks";
 import { CharacterDisplay, CharacterLoading } from "../03-examples";
 
-const API = "https://rickandmortyapi.com/api/character/";
+// const API = "https://rickandmortyapi.com/api/character/";
+const QUOTEAPI = "https://type.fit/api/quotes";
 
 export const Layout = () => {
   
   const { counter, increment, decrement } = useCounter(1);
 
-  const id = ( counter <= 0 ) ? 1 : counter
+  const id = ( counter < 0 ) ? 0 : counter
   
-  const { data, isLoading, hasError } = useFetch(`${API}${id}`);
-  const { name, species, image } = !!data && data;
+  // const { data, isLoading, hasError } = useFetch(`${API}${id}`);
+  // const { name, species, image } = !!data && data[0];
+  const { data, isLoading, hasError } = useFetch(`${QUOTEAPI}`);
+  const { text, author } = !!data && data[counter];
 
   return (
     <>
-      <h1 className="mt-2">Rick and Morty characters</h1>
+      <h1 className="mt-2">FreeCodeCamp Quotes API</h1>
 
-      {isLoading ? <CharacterLoading /> : <CharacterDisplay name={ name } species={ species } image={ image } />}
+      {isLoading ? <CharacterLoading /> : <CharacterDisplay text={ text } author={ author } />}
 
       <button 
         className="btn btn-primary"
