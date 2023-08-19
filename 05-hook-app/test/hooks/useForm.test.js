@@ -1,6 +1,8 @@
 import { act, renderHook } from "@testing-library/react";
 import { useForm } from "../../src/hooks/useForm";
 
+// Estas pruebas no me funcionaron igual ya que use otra API
+
 describe('Pruebas del useForm', () => { 
   
   const initialForm = {

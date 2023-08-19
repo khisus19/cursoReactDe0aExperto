@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react"
 
 
-export const CharacterDisplay = ({ text, author }) => {
+export const CharacterDisplay = ({ text, author, name, species }) => {
 
   const [boxSize, setboxSize] = useState({ width: 0, height: 0 })
 
@@ -22,8 +22,8 @@ export const CharacterDisplay = ({ text, author }) => {
         className="blockquote text-end"
         style={{ display: "flex", flexDirection: "column" }}
       >
-        <p ref={ pRef } className="mb-1">{ text }</p>
-        <footer className="blockquote-footer">{ author }</footer>
+        <p ref={ pRef } className="mb-1">{ text || species }</p>
+        <footer className="blockquote-footer">{ author || name }</footer>
       </blockquote>
       <code>{JSON.stringify( boxSize )}</code>
     </>
