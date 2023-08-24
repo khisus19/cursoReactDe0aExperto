@@ -14,7 +14,9 @@ describe('Pruebas en el TodoItem component', () => {
   const onToggleTodoMock = jest.fn();
 
   beforeEach( () => jest.clearAllMocks() );
-  // Esta línea hace que las funciones sean limpiadas antes de cada prueba para que no queden residuos de otras pruebas. Se debe usar solo cuando sepamos que vamos a usar la funcion más de una vez
+  // Esta línea hace que las funciones sean limpiadas antes de cada prueba 
+  // para que no queden residuos de otras pruebas. Se debe usar solo cuando 
+  // sepamos que vamos a usar la funcion más de una vez
 
 
   test('Debe mostrar el Todo pendiente de completar', () => { 
