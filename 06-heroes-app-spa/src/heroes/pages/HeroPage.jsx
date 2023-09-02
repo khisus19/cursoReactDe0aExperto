@@ -24,7 +24,7 @@ export const HeroPage = () => {
         <img 
           src={ `/assets/heroes/${ id }.jpg` }
           alt={ hero.superhero }
-          className="img-thumbnail"
+          className="img-thumbnail animate__animated animate__backInLeft animate__fast"
         />
       </div>
       <div className="col-8">
