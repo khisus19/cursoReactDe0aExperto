@@ -23,7 +23,7 @@ describe('Pruebas en el <PublicRoute />', () => {
 
   });
 
-  test('Debe navegar si esta autenticado', () => { 
+  test('Debe ir a una ruta privada si esta autenticado', () => { 
 
     const contextValue = {
       logged: true,
@@ -51,7 +51,6 @@ describe('Pruebas en el <PublicRoute />', () => {
     );
 
     expect( screen.getByText("Pagina Marvel") ).toBeTruthy();
-
   });
 
 
