@@ -42,7 +42,7 @@ describe('Pruebas en <AppRouter />', () => {
       </MemoryRouter>
     );
 
-    expect( screen.getByText("Marvel") ).toBeGreaterThanOrEqual(1);
+    expect( screen.getAllByText("Marvel").length ).toBeGreaterThanOrEqual(1);
 
   });
 
