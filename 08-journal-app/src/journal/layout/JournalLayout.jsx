@@ -18,7 +18,7 @@ export const JournalLayout = ({ children }) => {
         component="main"
         sx={{ flexGrow: 1, p: 3 }}
       >
-        {/* Toolbar */}
+        {/* Toolbar - Sirve para que ocupe el espacio debajo del NavBar y desplace lo demás hacia abajo*/}
         <Toolbar />
 
         { children }
