@@ -6,7 +6,7 @@ import { decrement, increment, incrementBy } from "./store/slices/counter/counte
 
 function App() {
 
-  const { counter } = useSelector( state => state.counter );
+  const { counter, times } = useSelector( state => state.counter );
   const dispatch = useDispatch();
 
   return (
@@ -24,8 +24,8 @@ function App() {
         <button onClick={ () => dispatch( decrement() ) }>
           Decrement
         </button>
-        <button onClick={ () => dispatch( incrementBy(2) ) }>
-          Increment by 2
+        <button onClick={ () => dispatch( incrementBy(times) ) }>
+          Increment by { times }
         </button>
       </div>
     </>
